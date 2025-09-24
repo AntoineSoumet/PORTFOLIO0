@@ -197,14 +197,36 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
     }
 }
 
+/* Pour les écrans de moins de 768px (tablettes et téléphones) */
+@media (max-width: 768px) {
+    .btn-custom2{
+        padding: 12px 18px; /* Réduit le padding */
+        font-size: 13px; /* Réduit légèrement la taille de la police */
+        margin-right: 20px; /* Réduit l'espacement entre les boutons */
+        margin-top: 15px; /* Réduit la marge supérieure */
+    }
+}
+
+/* Pour les écrans très étroits (moins de 480px) */
+@media (max-width: 480px) {
+    .btn-custom2 {
+        padding: 10px 15px; /* Réduit davantage le padding */
+        font-size: 12px; /* Ajuste la taille de la police pour les très petits écrans */
+        margin-right: 10px; /* Réduit encore l'espacement horizontal */
+        margin-top: 10px; /* Réduit la marge supérieure */
+        width: 100%; /* Les boutons prennent toute la largeur du conteneur */
+        text-align: center; /* Centre le texte */
+    }
+}
+
 /* Header Section */
 .intro {
     display: block;
     width: 100%;
     padding: 0;
     margin-bottom: 80px;
-    background: url(../img/fond2.png) no-repeat center center; /* Centrer l'image par défaut */
-    background-color: #fff;
+    /*background: url(../img/fond2.png) no-repeat center center; /* Centrer l'image par défaut */
+    background-color: #ececec;
     background-size: cover;
     min-height: 300px; /* Hauteur minimale pour éviter un conteneur trop petit */
 }
@@ -745,9 +767,7 @@ label {
     float: right;
   }
 
-/*Image texte experience Inde*/ 
-
-/* Conteneur principal des blocs image + texte */
+/* ===== STYLES DE BASE (DESKTOP - INCHANGÉS) ===== */
 #expinde .overlay,
 #expinde .container .container,
 #expinde .row,
@@ -755,10 +775,9 @@ label {
 #expinde .intro-text {
   width: 100%;
   max-width: 100%;
-  box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur */
+  box-sizing: border-box;
 }
 
-/* Conteneur flex pour chaque paire image/texte */
 .content-wrapper {
   display: flex;
   align-items: center;
@@ -766,26 +785,22 @@ label {
   margin-bottom: 20px;
 }
 
-/* Conteneur de l'image */
 .image-container {
-  flex: 0 0 160px; /* Largeur fixe de 120px pour l'image */
+  flex: 0 0 160px;
   margin-right: 40px;
 }
 
-/* Image elle-même */
 .intro-image {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* Conteneur du texte */
 .text-container {
-  flex: 1 1 auto; /* Prend tout l'espace restant */
-  min-width: 0; /* Permet au texte de rétrécir si nécessaire */
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
-/* Style du texte */
 p2 {
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
@@ -793,5 +808,77 @@ p2 {
   color: #333;
   text-align: justify;
   margin: 0;
-  word-break: break-word; /* Évite les débordements */
+  word-break: break-word;
 }
+
+/* ===== ADAPTATION MOBILE ===== */
+@media (max-width: 1024px) {
+  /* Tablettes */
+  .image-container {
+    flex: 0 0 140px;
+  }
+  p2 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Mobile - Empilement vertical */
+  .content-wrapper {
+    flex-direction: column;
+    align-items: center; /* Centrage de tous les éléments */
+    text-align: center; /* Centrage du texte */
+  }
+
+  /* Réduction des images */
+  .image-container {
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto 15px; /* Centrage horizontal */
+  }
+
+  /* Texte centré et réduit */
+  .text-container {
+    width: 100%;
+    max-width: 300px; /* Largeur max pour éviter les lignes trop longues */
+    margin: 0 auto; /* Centrage */
+  }
+
+  p2 {
+    font-size: 15px;
+    text-align: center; /* Centrage explicite */
+    line-height: 1.5;
+    margin: 0 auto; /* Centrage */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Petits écrans */
+  .image-container {
+    max-width: 200px;
+  }
+
+  .text-container {
+    max-width: 280px;
+  }
+
+  p2 {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  /* Très petits écrans */
+  .image-container {
+    max-width: 180px;
+  }
+
+  .text-container {
+    max-width: 250px;
+  }
+
+  p2 {
+    font-size: 13px;
+  }
+}
+
